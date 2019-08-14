@@ -32,12 +32,12 @@ RUN \
 # create grimlock user
 RUN \
     groupmod -g 1000 users && \
-    useradd -u 911 -U -d /config -s /bin/false grimlock && \
+    useradd -u 911 -K MAIL_DIR=/dev/null -U -d /config -s /bin/false grimlock && \
     usermod -G users grimlock && \
     mkdir -p /config /app /defaults /data && \
     touch /var/lock/rclone.lock
 
 # add local files
-COPY root/ /
+#COPY root/ /
 
 VOLUME ["/config"]
