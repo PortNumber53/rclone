@@ -2,8 +2,8 @@ FROM alpine:latest
 MAINTAINER grimlock <grimlock@portnumber53.com>
 
 # global environment settings
-ENV RCLONE_VERSION="current"
-ENV RCLONE_ARCH="amd64"
+ARG RCLONE_VERSION="current"
+ARG RCLONE_ARCH="amd64"
 
 RUN apk --no-cache add ca-certificates fuse wget \
     && cd /tmp \
